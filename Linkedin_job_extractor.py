@@ -25,7 +25,6 @@ sheet_creds = r"E:\Naukri\your_cred.json"
 def gs_reader(sheet_name,col,sheet_url,skiprows):
     scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
     credentials = ServiceAccountCredentials.from_json_keyfile_name(sheet_creds,scope)
-#     credentials = ServiceAccountCredentials.from_json_keyfile_name(r'C:\Users\LENOVO\Downloads\hasan_credentials.json',scope)
     gc = gspread.authorize(credentials)
     sht2 = gc.open_by_url(sheet_url)
     sht = sht2.worksheet(sheet_name)
